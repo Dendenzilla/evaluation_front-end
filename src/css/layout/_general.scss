@@ -16,15 +16,34 @@ button {
     cursor: pointer;
     position: relative;
     &.grey {
-        background: rgb(211, 211, 211);
-        border: 1px solid rgb(172, 172, 172);
+        background: rgb(243, 243, 243);
+        border: 1px solid rgb(231, 231, 231);
         color: black;
         height: 36px;
+        &__dark {
+            background: rgb(31, 31, 31);
+            color: white;
+            &:hover{
+                background: #f8b600;
+                color: white;
+                border: none;
+            }
+        }
         &:hover{
             background: #f8b600;
             color: white;
             border: none;
         }
+    }
+    &.white {
+        background-color: white;
+        color: rgb(95, 95, 95);
+        border: 1px solid rgb(219, 219, 219);
+    }
+    &.small {
+        font-size: 10px;
+        padding: 10px;
+        line-height: 10px;
     }
 }
 button:hover {

@@ -1,19 +1,40 @@
 #topNav {
     display: flex;
     justify-content: space-between;
+    padding: 10px 0;
+    font-size: 12px;
+    & a {
+        padding: 10px;
+    }
 }
 #header {
     display: flex;
     justify-content: space-between;
     padding: 10px;
+    background-color: rgba(255, 255, 255, 0.164);
 }
 .head {
     min-height: 90vh;
+    background-color: aqua;
+    background: url(../img/hero-bg.jpg) center/cover ;
+    position: relative;
+    z-index: 100;
+    color: white;
+    &::before {
+    content:'';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(rgb(0, 0, 0), 0.5);
+    z-index: -10;
+    }
 }
 .container {
     width: 90%;
     margin: 0 auto;
-    background-color: chocolate;
 }
 .dest {
     width: 100%;
@@ -49,7 +70,7 @@
     height: 100%;
     top: 0;
     left: 0;
-    background-color: rgba(rgb(53, 53, 53), 0.5);
+    background-color: rgba(rgb(22, 22, 22), 0.5);
     z-index: 2;
 }
 .package {
@@ -66,4 +87,101 @@
     & h4 {
         text-align: left;
     }
+}
+.swiper-container {
+    height: 100%;
+}
+.swiper-slide {
+    background-color: white;
+    width: 100%;
+    margin-bottom: 100px;
+    cursor: pointer;
+    & .teste img {
+        width: 40px;
+        margin-right: 20px;
+    }
+}
+.swiper-pagination {
+    border-radius: 0;
+}
+.swiper-pagination .swiper-pagination-bullet {
+    border-radius: 0;
+    background: rgb(255, 166, 0);
+}
+.swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background: rgb(255, 166, 0);
+}
+.teste {
+    padding: 20px;
+    display: flex;
+}
+.fa-star {
+    color: rgb(85, 85, 85);
+    &.yellow {
+        color: rgb(255, 166, 0);
+    }
+}
+.price {
+    text-align: center;
+}
+.wrapper {
+    & div:first-of-type {
+        width: 80%;
+        & p {
+            margin-bottom: 40px;
+        }
+    }
+    & div {
+        margin: 100px auto 0;
+        & img {
+            width: 100%;
+            max-height: 300px;
+        }
+    }
+}
+.blogpost {
+    width: 100%;
+    margin: 0 auto;
+    & img {
+    width: 100%;
+    }
+    & h4 {
+        text-align: left;
+    }
+}
+footer {
+    background-color: #04091E;
+    color: white;
+    margin-top:100px;
+    padding-bottom: 100px;
+    & h4 {
+        text-align: left;
+    }
+    & p {
+        color: #777777;
+        font-size: 14px;
+    }
+    & .navLink {
+        display: flex;
+        flex-direction: column;
+        & a {
+            margin: 10px 0;
+            color: #777777;
+        }
+        & a:hover {
+            color: #f8b600;
+        
+        }
+    }
+}
+.insta {
+    display: flex;
+    flex-wrap: wrap;
+    & div {
+        width: 25%;
+        margin-bottom: 20px;
+    }
+}
+.about {
+    padding-top: 100px;
 }
