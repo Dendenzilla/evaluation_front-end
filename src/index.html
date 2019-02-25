@@ -65,17 +65,93 @@
         <div class="container">
             <h2>We Provide Affordable Prices</h2>
             <p>Well educated, intellectual people, especially scientists at all times demonstrate considerably.</p>
-            <h4>Cheap Packages</h4>
-            <div class="package">
-
+            
+            <div class="package" id="package-list">
+                <div>
+                    <h4>Cheap Packages</h4>
+                    <pack-price></pack-price>
+                </div>
+                <div>
+                    <h4>Luxury Package</h4>
+                    <pack-price></pack-price>
+                </div>
+                <div>
+                    <h4>Camping Package</h4>
+                    <pack-price></pack-price>
+                </div>
             </div>
         </div>
         <section>
-            
+            <div class="container">
+                <h2>Other issues we can help you with</h2>
+                <p>We all live in an age that belongs to the young at heart. Life that is.</p>
+                <div class="issues-list">
+                    <div class="issue car">
+                        <img src="img/o1.jpg" alt="car issue">
+                        <h4>Rent a Car</h4>
+                        <p>The preservation of human life is the ultimate value, a pillar of ethics and the foundation.</p>
+                    </div>
+                    <div class="issue cruise">
+                        <img src="img/o2.jpg" alt="car issue">
+                        <h4>Rent a Car</h4>
+                        <p>The preservation of human life is the ultimate value, a pillar of ethics and the foundation.</p>
+                    </div>
+                    <div class="issue list">
+                        <img src="img/o3.jpg" alt="car issue">
+                        <h4>Rent a Car</h4>
+                        <p>The preservation of human life is the ultimate value, a pillar of ethics and the foundation.</p>
+                    </div>
+                    <div class="issue food">
+                        <img src="img/o4.jpg" alt="car issue">
+                        <h4>Rent a Car</h4>
+                        <p>The preservation of human life is the ultimate value, a pillar of ethics and the foundation.</p>
+                    </div>
+                </div>
+            </div>
         </section>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.7/vue.min.js"></script>
-    <script src="js/main.min.js">
+    <script src="js/main.min.js"></script>
+    <script>
+    new Vue ({
+    
+        el: "#app",
+    })
+
+    Vue.component('pack-price', {
+      data: function () {
+        return {
+          count: 0
+        }
+      },
+      template: `<div class="cheap">
+      <div class="package__precisions">
+          <p>New York</p>
+          <button class="grey">$1500</button>
+      </div>
+      <div class="package__precisions">
+          <p>Maldives</p>
+          <button class="grey">$1500</button>
+      </div>
+      <div class="package__precisions">
+          <p>Sri Lanka</p>
+          <button class="grey">$1500</button>
+      </div>
+      <div class="package__precisions">
+          <p>Nepal</p>
+          <button class="grey">$1500</button>
+      </div>
+      <div class="package__precisions">
+          <p>Thailand</p>
+          <button class="grey">$1500</button>
+      </div>
+      <div class="package__precisions">
+          <p>Singapore</p>
+          <button class="grey">$1500</button>
+      </div>
+  </div>`
+    })
+    new Vue({ el: '#package-list' })
 
     </script>
     </body>

@@ -7,6 +7,9 @@
     justify-content: space-between;
     padding: 10px;
 }
+.head {
+    min-height: 90vh;
+}
 .container {
     width: 90%;
     margin: 0 auto;
@@ -48,4 +51,19 @@
     left: 0;
     background-color: rgba(rgb(53, 53, 53), 0.5);
     z-index: 2;
+}
+.package {
+    &__precisions {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+}
+.issue {
+    & img {
+        width: 100%;
+    }
+    & h4 {
+        text-align: left;
+    }
 }
