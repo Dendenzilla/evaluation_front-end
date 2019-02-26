@@ -198,11 +198,14 @@
     & img {
         width: 100%;
     }
-    & h4 {
+    & h4, p {
         text-align: left;
     }
 }
-.swiper-container {
+.testimonials {
+    background-color: rgb(201, 201, 201);
+}
+.swiper-container, .swiper-container2 {
     height: 100%;
 }
 .swiper-slide {
@@ -275,6 +278,7 @@ footer {
         color: #777777;
         font-size: 14px;
         line-height: 20px;
+        text-align: left;
     }
     & .navLink {
         display: flex;
@@ -375,5 +379,20 @@ footer {
         &__item {
             width: 30%;
         }
+    }
+    .issues-list {
+        display: flex;
+        justify-content: space-between;
+    }
+    .issue {
+        width:23%;
+    }
+    footer  .container:first-of-type {
+        & > div {
+            width: 24%;
+        }
+    }
+    .wrapper {
+        display: flex;
     }
 }

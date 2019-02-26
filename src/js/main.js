@@ -41,5 +41,10 @@ $(window).scroll(function () {
 $(window).resize(function () {
     stickyNav = $('#header').offset().top;
     stickyFct();
+    
 });
 
+$(window).resize(function(){
+    
+  })
+  $(window).trigger('resize')

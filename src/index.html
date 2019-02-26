@@ -174,7 +174,7 @@
                 <p>The French Revolution constituted for the conscience of the dominant aristocratic class a fall from</p>
             <div class="swipper">
                 <!-- Slider main container -->
-                <div class="swiper-container">
+                <div class="swiper-container s1">
                     <!-- Additional required wrapper -->
                     <div class="swiper-wrapper">
                         <!-- Slides -->
@@ -266,7 +266,7 @@
             <h2>Latest from Our Blog</h2>
             <p>With the exception of Nietzsche, no other madman has contributed so much to human sanity as has.</p>
 
-            <div class="swiper-container">
+            <div class="swiper-container s2">
                     <!-- Additional required wrapper -->
                     <div class="swiper-wrapper">
                         <!-- Slides -->
@@ -397,14 +397,25 @@
       </div>
   </div>`
     })
-    new Vue({ el: '#package-list' })
+    new Vue({ el: '#package-list' });
 
     // SWIPER STARTS HERE //
     // SWIPER STARTS HERE //
-    var mySwiper = new Swiper ('.swiper-container', {
+ 
+    var mySwiper1 = new Swiper ('.s1', {
     // Optional parameters
+    
+    slidesPerView: 2,
+    spaceBetween: 100,
     direction: 'horizontal',
     loop: true,
+
+    breakpoints: {
+    900: {
+      slidesPerView: 1,
+      spaceBetweenSlides: 10
+        },
+    },
 
     // If we need pagination
     pagination: {
@@ -415,7 +426,38 @@
         delay: 5000,
         disableOnInteraction: false,
     },
+    
+    
+  })
+
+  //SECOND SWIPER //
+  //SECOND SWIPER //
+
+  var mySwiper2 = new Swiper ('.s2', {
+    // Optional parameters
+    
+    slidesPerView: 3,
     spaceBetween: 100,
+    direction: 'horizontal',
+    loop: true,
+
+    breakpoints: {
+    900: {
+      slidesPerView: 1,
+      spaceBetweenSlides: 10
+        },
+    },
+
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+    },
+    
     
   })
     </script>
