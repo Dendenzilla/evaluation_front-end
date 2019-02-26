@@ -31,8 +31,7 @@
                     <span class="burger__item"></span>
                     <span class="burger__item"></span>
                 </div>
-            </div>
-            <div class="menu hidden">
+                <div class="menu hidden">
                 <div class="menu-hold">
                     <a href="index.html">Home</a>
                     <a href="book.html">Book your holidays</a>
@@ -40,6 +39,8 @@
                     <a href="#">contact</a>
                 </div>
             </div>
+            </div>
+            
             <div class="book-title">
                 <h1>Book your holidays</h1>
                 <p>Home - Book your holidays</p>
@@ -47,10 +48,24 @@
         </div>
         </div>
         <section class="pickDest" id="app">
-            <h2>Choose your destination</h2>
-            <p>Your city trip is waiting for you ♥</p>
-            <div class="cities" v-for="d in destinations">
-                <p>{{d.countryName}}</p>
+            <div ><!--
+                <h2>Choose your destination</h2>
+                <p>Your city trip is waiting for you ♥</p>
+                <div class="cities" v-for="d in destinations" >
+                    <a href="#" @click.prevent="pickedCity(d.countryName)"> {{d.countryName}} </a>
+                    <p>You have chosen {{pickedCity}} </p>
+                </div>
+                -->
+                <ul>
+                    <li v-for="d in destinations" :key="d.tripId">
+                        <a href="#" @click.prevent="citypick(d.countryName)">{{d.countryName}}</a>
+                        <p>Pays sélectionné: {{pickedCity}}</p>
+                    <p >The trips available for {{d.countryName}} are: <ul> <li v-for="trips in d.trips">
+                        {{trips.tripName}}
+                    </li> </ul></p>
+                    </li>
+                    </ul>
+                    
             </div>
         </section>
         <section class="price">
@@ -120,22 +135,19 @@
             data() {
                 return {
                 destinations: [],
-                destipick: [],
+                pickedCity: null,
                 }
-            },
-            computed: {
-                selectedDestination() {
-                    if (this.destipick != null) {
-                        return this.destinations.filter(t => d.countryName === this.destipick)[0].trips;
-                    } else {
-                        return [];
-            }}
             },
             created() {
                 axios.get('https://wt-4abc83e5c2056740a9e00a6e0975a49a-0.sandbox.auth0-extend.com/city-trip')
                 .then(response => {
                     this.destinations = response.data;
                 })
+            },
+            methods: {
+                citypick(country) {
+                    this.pickedCity = country; 
+                }
             }
         })
     </script>
