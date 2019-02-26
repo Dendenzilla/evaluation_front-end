@@ -12,14 +12,76 @@
     justify-content: space-between;
     padding: 10px;
     background-color: rgba(255, 255, 255, 0.164);
+    transition: 1s background ease-in-out;
+    &.sticky {
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+        background: black;
+        width: 100%;
+        padding: 3% 5%;
+        left: 0;
+        transition: 1s background ease-in-out;
+    }
+}
+.burger {
+    width: 25px;
+    height: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: auto 0;
+    cursor: pointer;
+    z-index: 1001;
+    &__item {
+        width: 20px;
+        height: 2px;
+        background-color: white;
+    }
+}
+.menu-hold {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.664);
+}
+.menu {
+    width: 100%;
+    position: absolute;
+    height: 100vh;
+    left:0vw;
+    top: 0;
+    z-index: 1000;
+    transition: 0.1s all ease-in-out;
+    & a {
+        padding: 15px 0;
+        margin-left: 20px;
+        z-index: 1000;
+    }
+    &.hidden {
+    left: -100vw;
+    }
+    &::before {
+        content:'';
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba(rgb(0, 0, 0), 0.5);
+        z-index: 100;
+        }
 }
 .head {
-    min-height: 90vh;
+    height: 90vh;
     background-color: aqua;
     background: url(../img/hero-bg.jpg) center/cover ;
     position: relative;
     z-index: 100;
     color: white;
+    min-height: 800px;
     &::before {
     content:'';
     display: block;
@@ -32,9 +94,48 @@
     z-index: -10;
     }
 }
+.form__select {
+    display: flex;
+    & p {
+        padding: 5px;
+        background-color: white;
+        color:grey;
+        margin: 40px 0 0 0;
+        cursor: pointer;
+        &.faded {
+            background-color: rgba(255, 255, 255, 0.425);
+            color: white;
+        }
+    }
+}
+.forms {
+    padding: 20px;
+    background-color: white;
+    & input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid rgb(196, 196, 196);
+        font-size:12px;
+        &::placeholder {
+            color:rgb(196, 196, 196)
+        }
+    }
+}
+
+.formbutt {
+    margin: 0 auto;
+}
+.forms__flight.hide, .forms__hotel.hide, .forms__holiday.hide {
+    display: none;
+}
 .container {
     width: 90%;
     margin: 0 auto;
+}
+
+.destinationsList {
+    padding: 100px 0;
 }
 .dest {
     width: 100%;
@@ -73,7 +174,20 @@
     background-color: rgba(rgb(22, 22, 22), 0.5);
     z-index: 2;
 }
+.packages {
+    background: url(../img/price-bg.png) center/cover;
+    background-color: rgba(177, 177, 177, 0.466);
+    padding: 100px 0;
+}
 .package {
+    &__item {
+        background-color: white;
+        padding: 10px;
+        & h4 {
+            padding-bottom: 5px;
+            border-bottom: 1px solid gold;
+        }
+    }
     &__precisions {
         display: flex;
         justify-content: space-between;
@@ -160,17 +274,28 @@ footer {
     & p {
         color: #777777;
         font-size: 14px;
+        line-height: 20px;
     }
     & .navLink {
         display: flex;
         flex-direction: column;
         & a {
-            margin: 10px 0;
+            margin-bottom: 10px;
             color: #777777;
         }
         & a:hover {
             color: #f8b600;
         
+        }
+    }
+    & .container:first-of-type {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 50px;
+        & > div {
+            width: 45%;
+
         }
     }
 }
@@ -182,6 +307,73 @@ footer {
         margin-bottom: 20px;
     }
 }
-.about {
-    padding-top: 100px;
+.mentions {
+    border-top: 1px solid gold;
+}
+.news form {
+    display: flex;
+}
+.news input {
+    background: transparent;
+    padding: 5px;
+    border: 1px solid grey;
+    width: 80%;
+}
+.submit {
+    width: 20%;
+    padding: 5px;
+    &:hover {
+        color: white;
+        background-color: #f8b600;
+    }
+}
+@media only screen and (min-width: 900px) {
+    .catch {
+        width: 50%;
+        float: left;
+        margin-top:150px;
+    }
+    .bookForm {
+        width: 30%;
+        float: right;
+        margin-top:100px;
+    }
+    .head {
+        min-height: 600px;
+    }
+    .menu-hold {
+        flex-direction: row;
+        width: auto;
+        height: auto;
+        background: transparent;
+    }
+    .burger {
+        display: none;
+    }
+    .menu {
+        position: relative;
+        width: auto;
+        height: auto;
+        &.hidden {
+            left: 0vw;
+        }
+        &::before{
+            display: none;
+        }
+    }
+    .dest {
+        width: 30%;
+        height: 200px;;
+    }
+    .dest-hold {
+        display: flex;
+        justify-content: space-between;
+    }
+    .package {
+        display: flex;
+        justify-content: space-between;
+        &__item {
+            width: 30%;
+        }
+    }
 }
